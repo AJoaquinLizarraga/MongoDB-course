@@ -1,0 +1,19 @@
+/** @format */
+
+use("platzi_store")
+
+db.products.updateOne(
+  //query
+  {
+    _id: 2,
+  },
+  //change
+  {
+    $set: {
+      name: "Celular",
+      category: "Electronics",
+      price: 1500,
+      isStock: true,
+    },
+  }
+)

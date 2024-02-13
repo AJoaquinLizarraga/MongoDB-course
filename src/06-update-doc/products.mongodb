@@ -1,0 +1,15 @@
+/** @format */
+
+use("platzi_store")
+
+db.products.drop() // esto borra toda la coleccion
+
+db.products.insertMany([
+  { _id: 1, name: "Camisa", category: "Clothing", price: 30 },
+  { _id: 2, name: "Remera", category: "Clothing", price: 20 },
+  { _id: 3, name: "Pantalon", category: "Clothing", price: 60 },
+  { _id: 4, name: "Zapatillas", category: "Clothing", price: 80 },
+  { name: "Zapatillas", category: "Clothing", price: 80 },
+])
+
+db.products.find()

@@ -1,0 +1,39 @@
+/** @format */
+
+use("sample_training")
+
+// // $set sirve para actualizar un campo o crear un nuevo campo
+// db.zips.updateMany(
+//   // esto primero es una query
+//   { city: "CLEVELAND" },
+//   // update ==> operators
+//   {
+//     $set: {
+//       myAttr: "new  attribute",
+//     },
+//   }
+// )
+
+// // $rename sirve para cambiar el nombre de la key
+// db.zips.updateMany(
+//   // esto primero es una query
+//   { city: "CLEVELAND" },
+//   // update ==> operators
+//   {
+//     $rename: {
+//       myAttr: "my_attribute",
+//     },
+//   }
+// )
+
+// $unset sirve para eliminar un atributo completo
+db.zips.updateMany(
+  // esto primero es una query
+  { city: "CLEVELAND" },
+  // update ==> operators
+  {
+    $unset: {
+      my_attribute: "",
+    },
+  }
+)
