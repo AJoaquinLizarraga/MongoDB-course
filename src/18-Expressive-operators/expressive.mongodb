@@ -1,0 +1,21 @@
+/** @format */
+
+use("platzi_store");
+
+// db.monthlyBudget.find({
+//   spent: { $gte: 100 },
+// });
+
+// $expr => expressive operator // aqui funciona igual que el primero
+// db.monthlyBudget.find({
+//   $expr: {
+//     $gte: ["$spent", 100],
+//   },
+// });
+
+// aqui el expressive operator compara elementos del documento, en este caso que spent sea mas grande o igual que bu dget
+db.monthlyBudget.find({
+  $expr: {
+    $gte: ["$spent", "$budget"],
+  },
+});

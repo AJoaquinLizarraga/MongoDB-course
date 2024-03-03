@@ -1,0 +1,5 @@
+/** @format */
+
+use("platzi_store");
+
+db.monthlyBudget.find();

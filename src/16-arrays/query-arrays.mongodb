@@ -1,0 +1,26 @@
+/** @format */
+
+use("platzi_store");
+
+//$in
+
+// db.inventory.find({qty: { $in: [15, 25] }}) // este funciona tipo or, trae todos los que tengan un qty igual a 15v o 25
+
+// db.inventory.find({tags: { $in: ["book", "electronics"] }}) // esto funciona para traer un array que tenga uno, el otro o ambos elementos de un array
+
+// db.inventory.find({tags: { $nin: ["book", "electronics"] }}) // esto funciona al reves del in, trae a todos los que no contegan uno, el otro o los 2 elementos del array
+
+// de aqui para abajo, todos funcionan solo para arrays
+
+// db.inventory.find({tags: "book"}) // este trae a todos los que tengan tags con book
+
+// db.inventory.find({tags: ["school", "book"]}) //este trae exactamente a los que tengan ese array, en ese orden
+
+//$all
+// db.inventory.find({tags: { $all: ['book' , 'school']}}) // con este operador, trae a los que tienen los 2 elementos, no importa el orden, solo que aparezcan
+
+//$size
+// db.inventory.find({tags: { $size: 2 }}) //este trae a todos los que tengan un array de 2 elementos
+
+//$elemMatch
+db.survey.find({ results: { $elemMatch: { product: "xyz" } } });

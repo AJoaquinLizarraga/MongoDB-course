@@ -1,0 +1,6 @@
+/** @format */
+
+use("platzi_store");
+
+// db.survey.find()
+db.inventory.find();

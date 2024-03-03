@@ -1,0 +1,14 @@
+use("platzi_store")
+// el upsert true sirve para que la actualizacion tome el primer valor y cree el documento, si ya esta creado, lo actualiza 
+
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2024-01-04",
+},{
+    $push: { 
+        readings: 789
+    }
+},{
+    upsert: true
+}
+)

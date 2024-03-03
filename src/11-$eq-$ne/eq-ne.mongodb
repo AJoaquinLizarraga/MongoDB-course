@@ -1,0 +1,15 @@
+use("platzi_store")
+
+//using eq
+//esta linea de abajo es igual a la siguiente pero usando el $eq
+//  db.inventory.find({qty:20})
+
+
+// db.inventory.find({qty:{$eq: 20}})
+
+
+// db.inventory.find({"item.name": "ab"}) // esto sirve para buscar con una referencia de documento dentro de documento, de la misma forma que se busca en un objeto de javascript
+
+
+ 
+db.inventory.find({qty:{$ne: 20}}) // este $ne (not equal) trae todos lo que sea no igual a 20 en ese elemento del documento

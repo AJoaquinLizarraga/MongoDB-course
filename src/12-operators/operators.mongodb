@@ -1,0 +1,20 @@
+use("platzi_store")
+
+//using $gt (>) greater than,   $gte (>=) greater than or equal
+
+// db.inventory.find({ qty: { $gt: 20 }}) // esto trae todos los que coincidan que sean mayores que 20
+
+// db.inventory.find({ qty: { $gte: 20 }}) // esto trae todos los que coincidan que sean mayores o iguales que 20
+
+
+//using $lt (>) less than,    $lte (<=) less than or equal
+
+
+// db.inventory.find({ qty: { $lt: 20 }}) // este operador trae a todos los elementos que contentan qty < a 20
+
+
+
+// db.inventory.find({ qty: { $lte: 20 }}) //  este operador trae a los menores o iguales que 20
+
+//join
+db.inventory.find({ qty: { $gte: 25, $lte: 35 }}) //  este operador trae a los menores o iguales que 20

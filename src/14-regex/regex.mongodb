@@ -1,0 +1,11 @@
+use("platzi_store")
+
+// db.inventory.find({ "item.description": { $regex: /line/ }})  
+// db.inventory.find({ "item.description": { $regex: /LINE/i }})  // la i al final de la regex lo hace insensitiveCase 
+
+
+// db.inventory.find({ "item.description": { $regex: /line$/i }})  // el signo dolar es para que encontrar todos los que terminen con esa regex
+
+// db.inventory.find({ "item.description": { $regex: /^single/i }})  // el signo ^ es para que encontrar todos los que inicien con esa regex
+
+db.inventory.find({ "item.description": { $regex: /^S/im }})  // la m(multiline) despues de la i funciona para que encuentre a todos los elementos que comiencen con S, no importa si es en la primer linea o en el medio
